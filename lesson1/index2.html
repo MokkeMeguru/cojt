@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+        <meta charset="UTF-8">
+        <title>自己紹介</title>
+        <style>
+         body {
+             width:740px;
+             margin:auto;
+             font-family: 'Lato', 'Noto Sans Japanese', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+         }
+         body, section::before{
+             background-image: url("./58a4ad95.png");
+         }
+         section::before {
+             content: "";
+             z-index: -1;
+             -webkit-filter: blur(2px);
+             -ms-filter: blur(2px);
+             filter: blur(2px);
+             position:absolute;
+             width: 100%;
+             height: 100%;
+         }
+         section {
+             border: 2px black;
+             margin-bottom: 15px;
+             margin-top: 15px;
+             box-shadow: 10px 10px 10px 10px  rgba(0,0,0,0.1);
+         }
+         ul.nav {
+             display:table;
+             table-layout:fixed;
+             width:98%;
+             padding-left: 10px;
+             padding-right: 10px;
+             padding-bottom:40px;
+         }
+         ul.nav li {
+             display:table-cell;
+             vertical-align:middle;
+             text-align:center;
+             background-color:white;
+             border-left:1px solid black;
+             padding-top:5px;
+             padding-bottom:5px;
+         }
+         ul.nav li:last-child {
+             border-right:1px solid black;
+         }
+         ul.nav li a {
+             display:block;
+             text-decoration:none;
+             color:gray;
+         }
+         ul.nav li a:hover {
+             color:black;
+         }
+         h1.Title {
+             padding-left:20px;
+         }
+         table.z tr td.w {
+             width:580px;
+             text-align:center;
+         }
+         table.z tr td.n {
+             width:140px;
+             text-align:center;
+         }
+         .tabs {
+             margin-top: 50px;
+             padding-bottom: 40px;
+             background-color: #fff;
+             box-shadow: 0 1px 0px 1px rgba(0, 0, 0, 0.1);
+             width: 660px;
+             margin: 0.5em auto;
+
+         }
+
+         .tab_item {
+             width: calc(100%/3);
+             height: 50px;
+             background-color: #d9d9d9;
+             line-height: 50px;
+             font-size: 16px;
+             text-align: center;
+             color: #565656;
+             display: block;
+             float: left;
+             text-align: center;
+             font-weight: bold;
+             transition: all 0.2s ease;
+         }
+         .tab_item:hover {
+             opacity: 0.75;
+         }
+         input[name="tab_item"] {
+             display: none;
+         }
+         .tab_content {
+             display: none;
+             padding: 40px 40px 0;
+             clear: both;
+             overflow: hidden;
+         }
+         #write:checked ~ #write_content,
+         #draw:checked ~ #draw_content,
+         #program:checked ~ #program_content {
+             display: block;
+         }
+         .tabs input:checked + .tab_item {
+             background-color: #5ab4bd;
+             color: #fff;
+         }
+         .pro-list ul li.type {
+             list-style-type:none;
+             border-left: 6px solid #FFA000;
+             padding: 5px 1em;
+             margin-bottom: 10px;
+             margin-top: 10px;
+             margin-left: 5px
+         }
+         .pro-list ul .c_list {
+             padding: 0 5px 0.5em;
+             list-style-type:none;
+         }
+         .pro-list ul .c_list li {
+             position:relative;
+             padding:0.5em;
+             margin-bottom:4px;
+             background:#FFFFCC;
+             border-left:2.5em solid #FF7043;
+         }
+         .pro-list ul .c_list li::before {
+             position:absolute;
+             content: "\002713";
+             display:block;
+             padding: 0.5em;
+             color: white;
+             left: -2.25em;
+             transform: translateY(-20%);
+         }
+         .tbody {
+             padding-left: 5px;
+             padding-right: 5px;
+             width: 670px;
+             border-spacing: 0em 0.5em;
+         }
+         .tbody tr {
+             padding-bottom: 0.5em;
+             background: #ffeaea;
+             border-bottom: 1px solid #ded0d0;
+         }
+         .tbody td {
+             padding-bottom: 0.5em;
+             border-bottom: 1px solid #ded0d0;
+         }
+
+         .td-head {
+	           position: relative;
+	           padding: 0.5em 1em 0.5em 2.3em;
+             padding-left: 3em;
+             border-bottom: 1px solid #ded0d0;
+         }
+         .td-head::after,
+         .td-head::before {
+             content: '';
+             position:absolute;
+             transform: rotate(45deg);
+         }
+         .td-head::before {
+	           top: 0.6em;
+	           left: 0.2em;
+	           width: 10px;
+	           height: 10px;
+	           border:2px solid rgba(255,143,0,1);
+         }
+         .td-head::after {
+	           top: 0.8em;
+	           left: 0.7em;
+	           width: 12px;
+	           height: 12px;
+	           background: rgba(255,143,0,0.5);
+	           transform: rotate(60deg);
+         }
+         .td-end {
+             border-right: 1px solid #ded0d0;
+         }
+         .type-background {
+             padding: 2px;
+             margin: 3px;
+             background: #f4f4f4;
+             border-bottom: solid 3px #d7d7d7;
+             border-right: solid 3px #e0e0e0;
+         }
+         .type-background ol li {
+             border-right: 1px solid #e2e288;
+             border-bottom: 1px solid #e2e288;
+         }
+         h1, h3{
+             text-align:center;
+             
+             border-bottom: solid 3px #798ea7;
+             position: relative;
+         }
+         h1 {
+             margin-left: 10px;
+             margin-right: 10px;
+             padding-top: 10px;
+             font-size: 1.7em;
+         }
+         h2 {
+             font-size: 1.3em;
+             text-align:center;
+         }
+         input[type="checkbox"].on-off {
+             display: none;
+         }
+         .menu div {
+             -webkit-transition: all 0.5s;
+             -moz-transition: all 0.5s;
+             -ms-transition: all 0.5s;
+             -o-transition: all 0.5s;
+             transition: all 0.5s;
+             margin: 0;
+             padding: 0;
+             list-style: none;
+         }
+
+         .menu li {
+             padding: 5px;
+         }
+
+         input[type="checkbox"].on-off + div{
+             height: 0;
+             overflow: hidden;
+         }
+
+         input[type="checkbox"].on-off:checked + div{
+             height: auto;
+         }
+         .menu label {
+             padding-left: 25px;
+             margin-bottom: 5px;
+             display: block;
+             width: 640px;
+             box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+             border-radius: 3px;
+             font-weight:bold;
+             text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+         }
+         .menu label:active   {
+             transform: translateY(2px);
+         }
+         .menu div .living-space {
+             padding: 50px;
+         }
+         .subimage {
+             width: 200px;
+             float: right;
+         }
+        </style>
+    </head>
+    <body>
+        <section>
+            <h1 class="Title">自己紹介</h1>
+            <h2>〜&nbsp;Emacsはいいぞ&nbsp;〜</h2>
+        </section>
+        <section style="padding:10px">
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;プロフィール</h3>
+            <div class="pro-list">
+                <ul>
+                <div class="type-background">
+                        <li class="type">Emacs(しか)使えない人</li>
+                        <ol class="c_list">
+                            <li>レポート書くならEmacs</li>
+                            <li>テキストを書くならEmacs</li>
+                            <li>コーディングするならEmacs</li>
+                        </ol>
+                    </div>
+                    <div class="type-background">
+                        <li class="type">Clojure大好き侍</li>
+                        <table class="tbody">
+                            <tr class="tr-list">
+                                <td class="td-head">Java</td><td>-></td><td class="td-end">&nbsp;&nbsp;Clojure</td>
+                            </tr>
+                            <tr>
+                                <td class="td-head">JavaScript</td><td>-></td><td class="td-end">&nbsp;&nbsp;ClojureScript</td>
+                            </tr>
+                            <tr>
+                                <td class="td-head">HTML/CSS</td><td>-></td><td class="td-end">&nbsp;&nbsp;ClojureScript(Hiccups/Garden)</td>
+                            </tr>
+                            <tr>
+                                <td class="td-head">.Net</td><td>-></td><td class="td-end">&nbsp;&nbsp;ClojureCLR</td>
+                            </tr>
+                            <tr>
+                                <td class="td-head">OpenGL/CL etc</td><td>-></td><td class="td-end">&nbsp;&nbsp;Clojure and LWJGL</td>
+                            </tr>
+                        </table>        
+                    </div>
+                    <div class="type-background">
+                        <li class="type">何かを``かく''のが趣味です</li>
+                        <div class="tabs">
+                            <input id="write" name="tab_item" type="radio" checked>
+                            <label class="tab_item" for="write">&nbsp;文章を&nbsp;</label>
+                            <input id="draw" name="tab_item" type="radio">
+                            <label class="tab_item" for="draw">&nbsp;&nbsp;絵を&nbsp;&nbsp;</label>
+                            <input id="program" name="tab_item" type="radio">
+                            <label class="tab_item" for="program">プログラムを</label>
+
+                            <div class="tab_content" id="write_content">
+                                <div>
+                                    <img style="width:610px" alt="某大賞の進捗" src="./cap1.png"/>
+                                </div>
+                            </div>
+                            <div class="tab_content" id="draw_content">
+                                <div>
+                                    <img style="width:610px" alt="昔の進捗" src="./plant2.png"/>
+                                </div>
+                                <div>
+                                    <img style="width:610px" alt="最近の進捗" src="./cap2.JPG"/>
+                                </div>
+                            </div>
+                            <div class="tab_content" id="program_content">
+                                <div>
+                                    <img style="width:610px" alt="Clojure" src="./cap3.png"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="type-background">
+                        <li class="type">生息地</li>
+                        <div class="menu">
+                            <label for="panel1" style="background:#dfe44f;color:#868a12">ニコ生</label>
+                            <input class="on-off" type="checkbox" id="panel1" />
+                            <div>
+                                <div>
+                                    <div class="living-space">
+                                        <a href="https://com.nicovideo.jp/community/co3795100?com_header=1" style="text-decoration:none">ニコ生のURL</a>
+                                        <div class="subimage">
+                                            <img alt="niconico's icon" src="./niconico.png" style="width:150px;margin:100px 20px"/>
+                                        </div>
+                                        <div style="display:block">
+                                            <p>
+                                                お絵かきとプログラミングを交互に配信しています。偶に友人M氏が混ざります。
+                                            </p>
+                                            <ul>
+                                                <li>お絵かき</li>
+                                                スキルアップを目指してゴリゴリと進捗を産んでいます。最近は専らソーシャルゲームのキャラクター等を描いています。
+                                                <li>プログラミング</li>
+                                                Clojureを描いています。現在はまったりとOpenCVとLWJGL(JavaのOpenGL/AL etc ラッパー)、SQLite3を組み合わせてノベルゲームエンジンを作っています。
+                                                <li>その他</li>
+                                                配信中に疲れると雑談が始まります。
+                                            </ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="panel2" style="background:#7bcbf5;color:#387c9e">Twitter</label>
+                            <input class="on-off" type="checkbox" id="panel2" />
+                            <div>
+                                <div class="living-space">
+                                    <div class="subimage">
+                                        <img alt="Twitter's icon" src="./Twitter_logo.png" style="width:150px;margin:auto 20px" />
+                                    </div>
+                                    <ul style="list-style:none;padding:0;">
+                                        <li><a href="https://twitter.com/ElectMemo" style="text-decoration:none">Twitterアカウント①</a></li>
+                                        <li><a href="https://twitter.com/MeguruMokke" style="text-decoration:none">Twitterアカウント②</a> </li>
+                                    </ul>
+                                    
+                                    <div>
+                                        <p>
+                                            404 Not Found
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="panel3" style="background:#ff8080;color:#a7401b">GitHub</label>
+                            <input class="on-off" type="checkbox" id="panel3" />
+                            <div>
+                                
+                                <div class="living-space">
+                                    <a href="https://mokkemeguru.github.io/MokkeMeguru/" style="text-decoration:none">GitHubPagesのURL</a>
+                                    <div class="subimage">
+                                        <img src="./GitHub.png" alt="github's icon" style="width:150px;margin:auto 20px" />
+                                    </div>
+                                    <div>
+                                        <p>
+                                            あんまり更新できていません。
+                                        </p>
+                                        <p>
+                                            更新する時間が欲しい・・・
+                                            <br/> GitHub自体にはチュートリアルなども含めてClojureでの成果物が積まれています。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </section>
+    </body>
+</html>
